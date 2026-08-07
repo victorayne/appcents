@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheap Data Deals</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#0e0e0e;
+    color:#fff;
+    line-height:1.5;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1150px,92%);
+    margin:auto;
+}
+
+/* Header */
+
+header{
+    background:#111;
+    border-bottom:1px solid rgba(255,208,0,.25);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#ffd000;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+nav a:hover{
+    color:#ffd000;
+}
+
+/* Hero */
+
+.hero{
+    padding:90px 0 70px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:40px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffd000;
+    color:#000;
+    padding:8px 18px;
+    border-radius:50px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:56px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#ffd000;
+}
+
+.hero p{
+    color:#c9c9c9;
+    max-width:620px;
+    margin-bottom:35px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ffd000;
+    color:#000;
+    padding:15px 34px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.price-box{
+    background:#181818;
+    border:2px solid #ffd000;
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+}
+
+.old{
+    color:#888;
+    font-size:28px;
+    text-decoration:line-through;
+}
+
+.new{
+    color:#ffd000;
+    font-size:60px;
+    font-weight:bold;
+}
+
+.save{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 18px;
+    border-radius:50px;
+    background:#ffd000;
+    color:#000;
+    font-weight:bold;
+}
+
+/* Features */
+
+.features{
+    padding:80px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+    font-size:36px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:#171717;
+    border:1px solid rgba(255,208,0,.18);
+    padding:28px;
+    border-radius:16px;
+}
+
+.card h3{
+    color:#ffd000;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#bbb;
+}
+
+/* Pricing */
+
+.pricing{
+    padding:80px 0;
+}
+
+.plan-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.plan{
+    background:#171717;
+    border-radius:18px;
+    border:1px solid rgba(255,208,0,.2);
+    overflow:hidden;
+}
+
+.plan-top{
+    background:#ffd000;
+    color:#000;
+    text-align:center;
+    padding:20px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.plan-body{
+    padding:30px;
+    text-align:center;
+}
+
+.plan-body h2{
+    font-size:48px;
+    color:#ffd000;
+}
+
+.plan-body del{
+    color:#777;
+}
+
+.plan-body button{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    background:#ffd000;
+    color:#000;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CTA */
+
+.cta{
+    padding:90px 0;
+}
+
+.cta-box{
+    background:#ffd000;
+    color:#000;
+    border-radius:18px;
+    text-align:center;
+    padding:55px 25px;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:18px;
+}
+
+.cta p{
+    max-width:650px;
+    margin:auto;
+    margin-bottom:25px;
+}
+
+.cta a{
+    background:#000;
+    color:#ffd000;
+    padding:15px 35px;
+    display:inline-block;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* Footer */
+
+footer{
+    background:#090909;
+    border-top:1px solid rgba(255,208,0,.2);
+    margin-top:40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+    padding:55px 0;
+}
+
+.footer-grid h3{
+    color:#ffd000;
+    margin-bottom:18px;
+}
+
+.footer-grid ul{
+    list-style:none;
+}
+
+.footer-grid li{
+    margin:10px 0;
+}
+
+.footer-grid a{
+    color:#bbb;
+}
+
+.footer-grid a:hover{
+    color:#ffd000;
+}
+
+.bottom{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:18px 0;
+    text-align:center;
+    color:#999;
+    font-size:14px;
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero p{
+margin:auto auto 30px;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+}
+
+@media(max-width:600px){
+
+nav ul{
+display:none;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.hero{
+padding-top:60px;
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+🔥 Browsing Data Deals
+</div>
+
+<h1>
+Buy Data at <span>Affordable Prices</span>
+</h1>
+
+<p>
+Why pay more when you can get the same data for less? Fast delivery, instant activation, affordable pricing and trusted by thousands of customers.
+</p>
+
+<a href="#" class="btn">
+Buy Data Now
+</a>
+
+</div>
+
+<div>
+
+<div class="price-box">
+
+<div class="old">
+₦750
+</div>
+
+<div class="new">
+₦500
+</div>
+
+<h2>2.5GB Data</h2>
+
+<div class="save">
+Save ₦250
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="container">
+
+<h2 class="section-title">
+Why Buy From Us?
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>⚡ Instant Delivery</h3>
+<p>Receive your data immediately after payment.</p>
+</div>
+
+<div class="card">
+<h3>💰 Lowest Prices</h3>
+<p>Affordable data bundles without compromising quality.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Secure Payments</h3>
+<p>Your transactions are protected and encrypted.</p>
+</div>
+
+<div class="card">
+<h3>📞 24/7 Support</h3>
+<p>Friendly customer support whenever you need help.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+Start Saving on Every Purchase
+</h2>
+
+<p>
+Affordable data plans for everyone. Buy in seconds and stay connected without overspending.
+</p>
+
+<a href="#">
+Purchase Data
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>Company</h3>
+
+<ul>
+<li><a href="https://api.whatsapp.com/send?phone=2348137203447&text=Hello%20SMEData">Contact</a></li>
+<li><a href="https://smedata.ng/blog/">Blog</a></li>
+</ul>
+
+</div>
+
+<div>
+
+<h3>Legal</h3>
+
+<ul>
+<li><a href="https://smedata.ng/privacy-policy/">Privacy Policy</a></li>
+<li><a href="https://smedata.ng/terms-and-conditions/">Terms & Conditions</a></li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
