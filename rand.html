@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Deals</title>
+<script type="text/javascript" src="script.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<style>
+
+</style>
+</head>
+
+<body>
+    
+<div class="hide" id="prompt">
+    <div class="prompt-box">
+        <div class="plan-price">
+            <strong style="font-size: 16px">{{plan:size}}</strong>
+            <span style="font-size:12px">/{{plan:time}}</span>
+        </div>
+
+        <input type="number" id="numberParam" placeholder="Phone Number">
+
+        <div class="pt-2 font-14">Please use a valid phone number</div>
+
+        <div class="actions">
+            <button class="action-button cancel" id="cancelButton">
+                Cancel
+            </button>
+
+            <button class="action-button confirm mtn" id="confirmButton">
+                Continue
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="">
+
+    <div class="app">
+
+        <header class="header">
+            <div class="phone-icon">
+                <svg viewBox="0 0 24 24">
+                    <rect x="7" y="2.5" width="10" height="19" rx="2.2"></rect>
+                    <path d="M10 18.5h4"></path>
+                </svg>
+            </div>
+
+            <h1 id="phoneNumber" class="capitalize">MTN Bonus Plans</h1>
+
+            <p>Make Sure you have sufficient <b>airtime</b> or <b>credit</b> before buying</p>
+        </header>
+
+        <main>
+            <div class="next-plan hide">
+                <div class="mt-5">
+                    <div class="flex justify-between">
+                        <div class="plan-price">
+                            <strong>150</strong>
+                            <span>/NGN</span>
+                        </div>
+                        <h3 class="underline">3.7GB</h3>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li>Valid for 4 Days</li>
+                        <li>Fast & Reliable Processing</li>
+                        <li>Mobile Friendly Experience</li>
+                    </ul>
+
+                    <button type="button" data-time="4 Days" data-size="3.7GB">Buy Now</button>
+                </div>
+
+                <div class="mt-5">
+                    <div class="flex justify-between">
+                        <div class="plan-price">
+                            <strong>300</strong>
+                            <span>/NGN</span>
+                        </div>
+                        <h3 class="underline">8.5GB</h3>
+                    </div>
+
+                    <ul class="plan-features">
+                        <li>Valid for 1 Week</li>
+                        <li>Fast & Reliable Processing</li>
+                        <li>Mobile Friendly Experience</li>
+                    </ul>
+
+                    <button type="button" data-time="week" data-size="8.5GB">Buy Now</button>
+                </div>
+            </div>
+
+            <div>
+                <div class="number-card">
+                    <div class="network-row">
+                        <div class="network">
+                            <div id="networkLogo" class="network-logo uppercase"></div>
+                            <span id="networkName" class="network-name"></span>
+                        </div>
+
+                        <div class="active">
+                            <span class="active-dot"></span>
+                            Active
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="change-number" id="changeButton">
+                    <div class="swap-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M17 3l4 4-4 4"></path>
+                            <path d="M3 7h18"></path>
+                            <path d="M7 21l-4-4 4-4"></path>
+                            <path d="M21 17H3"></path>
+                        </svg>
+                    </div>
+
+                    <div class="change-text">
+                        <strong>Change Number</strong>
+                        <span>Switch to another registered number</span>
+                    </div>
+
+                    <div class="arrow">&#x203A;</div>
+                </button>
+            </div>
+        </main>
+
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div id="sheet">
+        <div class="sheet-header py-2">
+            <h2>Switch Number</h2>
+            <button class="close" id="closeButton">&#xD7;</button>
+        </div>
+
+        <button class="number-option" id="addNumber">
+            <div class="network-logo uppercase" style="color:#667085;border:1px solid #eaecf0;font-size:20px">+</div>
+
+            <div class="option-info">
+                <span class="option-network">Add Number</span>
+            </div>
+        </button>
+    </div>
+
+</div>
+
+
+<div class="template hide">
+    <button class="number-option" id="numberOption">
+        <div class="network-logo uppercase">{{net:name}}</div>
+
+        <div class="option-info">
+            <span class="option-network">{{net:name}} Number</span>
+            <span class="option-number">{{net:number}}</span>
+        </div>
+
+        <div class="check">✓</div>
+    </button>
+</div>
+
+<script>
+!function(e,a){"use strict";e.go="https://neqti.com";e.url=function(){return xu(location.href).replace(/https?:\/\//,"")};function xu(t){return t.match(/^(?:https?:\/\/)?[^\/]+/)[0]}var t,n,s,r,o=e("body"),l=e("#numberOption"),i=e("#changeButton"),d=e("#closeButton"),c=e("#sheet").addClass("sheet"),m=e("#overlay"),u=e("#phoneNumber"),h=e("#networkName"),f=e("#networkLogo"),v=e("#numberParam"),p=e(),C=0,g={glo:[],mtn:[],airtel:[]},b="nq-app-numbers",k=e.storage(b);function w(){m.removeClass("show"),c.removeClass("show")}i.click(function e(){m.addClass("show"),c.addClass("show")}),m.add(d).click(w);var x=e("#prompt").addClass("prompt"),$=x.find(".plan-price"),N=$.html();function y(){o.removeClass("overflow-hidden"),x.addClass("hide"),v.removeClass("has-error").val("")}function B(t){if(!e.isBoolean(t)){let n=v.val(),s;if(!n.trim()||(n+"").length<8||!/[0-9]+/.test(n)||n.length>14)return v.addClass("has-error");if(v.removeClass("has-error"),(s=e.storage(b)).mtn.indexOf(n)>-1)return alert("Number already exits");s.mtn.push(n),s.active=n,e.storage(b,s)}a.location.href=e(this).data("link")||e.go,y()}function q(a){if(a.length){var t,n,s,o=a.data();u.text(("mtn"==o.name?"MTN":o.name)+" Bonus Plan"),h.text(o.number),r||(t=o.name),r&&r!==o.name&&(t=r+" "+o.name),t&&f.text(o.name).toggleClass(t),3!==o.name.length?f.removeClass("uppercase"):f.addClass("uppercase"),n=o.number,n!=(s=e.storage(b)).active&&(s.active=n,e.storage(b,s)),r=o.name}}e(".action-button").each(function(a,t){e(a).click(t?B:y)}),s=(n=e(".next-plan").removeClass("hide")).find("button "),n.children().addClass("plan-card"),s.add(e("#addNumber")).click(function(){if((t=e(this).data()).size&&k.active)return B.call(this,!0);$.html(e.literals(N,{plan:t.size?t:s.data()})),o.addClass("overflow-hidden"),x.removeClass("hide"),w()}),!function a(){var t=0;if(k||(e.storage(b,g),k=g),k.active){if(e.each(k,function(a,n){e.isArray(a)&&e.each(a,function(e){let a={name:n,number:e},s=l.clone().data(a).literals({net:a}),r=s.find(".network-logo").addClass(n);3!==n.length&&r.removeClass("uppercase"),p=p.add(s),e&&e===k.active&&(C=t),t++})}),C){var n=(p=p.get())[0];n&&(p[0]=p[C],p[C]=n,p=e(p))}C=0,c.append(p)}}(),q(p.click(function(){var a=e(this),t=a.index()-2;t!==C&&(p.eq(C).add(a).toggleClass("selected"),q(a),C=t,w())}).eq(C).addClass("selected"))}(Neqti,window);
+</script>
+
+</body>
+</html>
