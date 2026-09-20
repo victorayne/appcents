@@ -7,8 +7,24 @@
 <script type="text/javascript" src="https://appcents.vercel.app/script.js"></script>
 <link rel="stylesheet" type="text/css" href="https://appcents.vercel.app/style.css">
 <style>
-
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1354729619979477');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1354729619979477&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 
 <body>
@@ -48,7 +64,7 @@
                 </svg>
             </div>
 
-            <h1 id="phoneNumber" class="capitalize">MTN Bonus Plans</h1>
+            <h1 id="phoneNumber" class="capitalize">MTN Best Plans</h1>
 
             <p>Make Sure you have sufficient <b>airtime</b> or <b>credit</b> before buying</p>
         </header>
@@ -70,10 +86,10 @@
                         <li>Mobile Friendly Experience</li>
                     </ul>
 
-                    <button type="button" data-time="4 Days" data-size="3.7GB" data-link="https://www.blurparkskipper.courses/click?offer_id=37719&pub_id=293800&pub_click_id=ADD_CLICK_ID_HERE&site=PASS_SITE_HERE&pub_sub_id=PASS_PLACEMENT_HERE">Buy Now</button>
+                    <button type="button" data-time="4 Days" data-size="3.7GB" data-link="https://www.blurparkskipper.courses/click?offer_id=36289&pub_id=293800&pub_sub_id=ADD_PUBLISHER_ID_HERE&pub_click_id=ADD_CLICK_ID_HERE">Buy Now</button>
                 </div>
 
-                <div class="mt-5 hide">
+                <div class="mt-5">
                     <div class="flex justify-between">
                         <div class="plan-price">
                             <strong>300</strong>
@@ -88,7 +104,7 @@
                         <li>Mobile Friendly Experience</li>
                     </ul>
 
-                    <button type="button" data-time="week" data-size="8.5GB" data-link="https://facebook.com">Buy Now</button>
+                    <button type="button" data-time="week" data-size="8.5GB" data-link="https://www.blurparkskipper.courses/click?offer_id=38695&pub_id=293800&pub_sub_id=ADD_PUBLISHER_ID_HERE&pub_click_id=ADD_CLICK_ID_HERE">Buy Now</button>
                 </div>
             </div>
 
@@ -164,7 +180,7 @@
 </div>
 
 <script>
-!function(e,a){"use strict";e.go="https://www.blurparkskipper.courses/click?offer_id=37719&pub_id=293800&pub_click_id=ADD_CLICK_ID_HERE&site=PASS_SITE_HERE&pub_sub_id=PASS_PLACEMENT_HERE";e.s=function(){var e;return(e=P(),e.match(/^(?:https?:\/\/)?[^\/]+/)[0]).replace(/https?:\/\//,"")};var t,n,r,s,o,l=e("body"),i=e("#numberOption"),d=e("#changeButton"),c=e("#closeButton"),u=e("#sheet").addClass("sheet"),m=e("#overlay"),h=e("#phoneNumber"),f=e("#networkName"),v=e("#networkLogo"),g=e("#numberParam"),p=e(),C=0,b={glo:[],mtn:[],airtel:[]},$="nq-app-numbers",k=e.storage($);function w(){m.removeClass("show"),u.removeClass("show")}d.click(function e(){m.addClass("show"),u.addClass("show")}),m.add(c).click(w);var x=e("#prompt").addClass("prompt"),N=x.find(".plan-price"),y=N.html();function B(){l.removeClass("overflow-hidden"),x.addClass("hide"),g.removeClass("has-error").val("")}function q(a){if(!e.isBoolean(a)){let t=g.val(),n;if(!t.trim()||(t+"").length<8||!/[0-9]+/.test(t)||t.length>14)return g.addClass("has-error");if(g.removeClass("has-error"),(n=e.storage($)).mtn.indexOf(t)>-1)return alert("Number already exits");n.mtn.push(t),n.active=t,e.storage($,n)}let r=e(this).data("link")||e.go;k.active?P(r):(e.storage("redr",r),_()),B()}function z(a){if(a.length){var t,n,r,o=a.data();h.text(("mtn"==o.name?"MTN":o.name)+" Bonus Plan"),f.text(o.number),s||(t=o.name),s&&s!==o.name&&(t=s+" "+o.name),t&&v.text(o.name).toggleClass(t),3!==o.name.length?v.removeClass("uppercase"):v.addClass("uppercase"),n=o.number,n!=(r=e.storage($)).active&&(r.active=n,e.storage($,r)),s=o.name}}e(".action-button").each(function(a,t){e(a).click(t?q:B)}),o=(r=(n=e(".next-plan").removeClass("hide")).find("button "),n.children().addClass("plan-card"),r.add(e("#addNumber")).click(function(){if((t=e(this).data()).size&&k.active)return q.call(this,!0);N.html(e.literals(y,{plan:t.size?t:r.data()})),l.addClass("overflow-hidden"),x.removeClass("hide"),w()}),r),!function a(){var t=0;if(k||(e.storage($,b),k=b),k.active){if(e.each(k,function(a,n){e.isArray(a)&&e.each(a,function(e){let a={name:n,number:e},r=i.clone().data(a).literals({net:a}),s=r.find(".network-logo").addClass(n);3!==n.length&&s.removeClass("uppercase"),p=p.add(r),e&&e===k.active&&(C=t),t++})}),C){var n=(p=p.get())[0];n&&(p[0]=p[C],p[C]=n,p=e(p))}C=0,u.append(p)}}(),z(p.click(function(){var a=e(this),t=a.index()-2;t!==C&&(p.eq(C).add(a).toggleClass("selected"),z(a),C=t,w())}).eq(C).addClass("selected"));let O;function P(e){if(!e)return a.location.href;a.location.href=e}function _(e,t){var n=function(){e?P(e):a.location.reload()};t?setTimeout(n,t||2e3):n()}(O=(e.storage("redr")||"").trim())&&(e.storage("redr",null),console.log(O),_(O||e.go,50))}(Neqti,window);
+!function(e,a){"use strict";e.go="https://www.blurparkskipper.courses/click?offer_id=36289&pub_id=293800&pub_sub_id=ADD_PUBLISHER_ID_HERE&pub_click_id=ADD_CLICK_ID_HERE";e.s=function(){var e;return(e=P(),e.match(/^(?:https?:\/\/)?[^\/]+/)[0]).replace(/https?:\/\//,"")};var t,n,r,s,o,l=e("body"),i=e("#numberOption"),d=e("#changeButton"),c=e("#closeButton"),u=e("#sheet").addClass("sheet"),m=e("#overlay"),h=e("#phoneNumber"),f=e("#networkName"),v=e("#networkLogo"),g=e("#numberParam"),p=e(),C=0,b={glo:[],mtn:[],airtel:[]},$="nq-app-numbers",k=e.storage($);function w(){m.removeClass("show"),u.removeClass("show")}d.click(function e(){m.addClass("show"),u.addClass("show")}),m.add(c).click(w);var x=e("#prompt").addClass("prompt"),N=x.find(".plan-price"),y=N.html();function B(){l.removeClass("overflow-hidden"),x.addClass("hide"),g.removeClass("has-error").val("")}function q(a){if(!e.isBoolean(a)){let t=g.val(),n;if(!t.trim()||(t+"").length<8||!/[0-9]+/.test(t)||t.length>14)return g.addClass("has-error");if(g.removeClass("has-error"),(n=e.storage($)).mtn.indexOf(t)>-1)return alert("Number already exits");n.mtn.push(t),n.active=t,e.storage($,n)}let r=e(this).data("link")||e.go;k.active?P(r):(e.storage("redr",r),_()),B()}function z(a){if(a.length){var t,n,r,o=a.data();h.text(("mtn"==o.name?"MTN":o.name)+" Bonus Plan"),f.text(o.number),s||(t=o.name),s&&s!==o.name&&(t=s+" "+o.name),t&&v.text(o.name).toggleClass(t),3!==o.name.length?v.removeClass("uppercase"):v.addClass("uppercase"),n=o.number,n!=(r=e.storage($)).active&&(r.active=n,e.storage($,r)),s=o.name}}e(".action-button").each(function(a,t){e(a).click(t?q:B)}),o=(r=(n=e(".next-plan").removeClass("hide")).find("button "),n.children().addClass("plan-card"),r.add(e("#addNumber")).click(function(){if((t=e(this).data()).size&&k.active)return q.call(this,!0);N.html(e.literals(y,{plan:t.size?t:r.data()})),l.addClass("overflow-hidden"),x.removeClass("hide"),w()}),r),!function a(){var t=0;if(k||(e.storage($,b),k=b),k.active){if(e.each(k,function(a,n){e.isArray(a)&&e.each(a,function(e){let a={name:n,number:e},r=i.clone().data(a).literals({net:a}),s=r.find(".network-logo").addClass(n);3!==n.length&&s.removeClass("uppercase"),p=p.add(r),e&&e===k.active&&(C=t),t++})}),C){var n=(p=p.get())[0];n&&(p[0]=p[C],p[C]=n,p=e(p))}C=0,u.append(p)}}(),z(p.click(function(){var a=e(this),t=a.index()-2;t!==C&&(p.eq(C).add(a).toggleClass("selected"),z(a),C=t,w())}).eq(C).addClass("selected"));let O;function P(e){if(!e)return a.location.href;a.location.href=e}function _(e,t){var n=function(){e?P(e):a.location.reload()};t?setTimeout(n,t||2e3):n()}(O=(e.storage("redr")||"").trim())&&(e.storage("redr",null),console.log(O),_(O||e.go,50))}(Neqti,window);
 </script>
 
 </body>
